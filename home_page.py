@@ -8,51 +8,149 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 
-# Custom CSS to improve spacing and styling
+# Custom CSS with monochromatic theme
 st.markdown("""
     <style>
+    /* Global Styles */
+    @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap');
+    
+    /* Animation for entire page */
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+    
+    .stApp {
+        background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+        animation: fadeIn 1.5s ease-in;
+    }
+    
+    /* Main Title Styling */
     .main-title {
-        font-size: 3rem;
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 3.5rem;
+        font-weight: bold;
+        color: #ffffff;
         text-align: center;
-        padding: 2rem 0;
-        font-weight: bold;
+        padding: 3.5rem 0;
+        transform: skew(-5deg);
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     }
+    
+    /* Event Card Styling */
+    .event-card {
+        background: linear-gradient(145deg, #2c2c2c, #1f1f1f);
+        border-radius: 15px;
+        padding: 2rem;
+        margin: 2rem 0;
+        border: 1px solid #404040;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+    
     .event-title {
+        font-family: 'Space Grotesk', sans-serif;
         font-size: 2rem;
-        padding: 1rem 0;
-        font-weight: bold;
+        color: #ffffff;
+        margin-bottom: 1rem;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
     }
+    
     .event-details {
+        font-family: 'Space Grotesk', sans-serif;
         font-size: 1.2rem;
-        padding: 0.5rem 0;
+        color: #e0e0e0;
+        background: linear-gradient(145deg, #333333, #262626);
+        padding: 0.8rem 1.2rem;
+        border-radius: 8px;
+        margin: 0.8rem 0;
+        border: 1px solid #404040;
+        transition: transform 0.3s ease;
+    }
+    
+    .event-details:hover {
+        transform: translateX(5px);
+    }
+    
+    /* Button Styling */
+    .stButton > button {
+        background: linear-gradient(145deg, #333333, #262626) !important;
+        color: white !important;
+        border-radius: 25px !important;
+        padding: 0.8rem 2rem !important;
+        font-family: 'Space Grotesk', sans-serif !important;
+        border: 1px solid #404040 !important;
+        transform: skew(-5deg);
+        width: 100%;
+        margin: 1rem 0;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+    
+    .stButton > button:hover {
+        background: linear-gradient(145deg, #404040, #333333) !important;
+        transform: skew(-5deg) scale(1.02);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    }
+    
+    /* Custom text colors */
+    p {
+        color: #cccccc;
+        line-height: 1.6;
+    }
+
+    /* Image caption styling */
+    .caption {
+        color: #999999;
+        font-size: 0.9rem;
+        text-align: center;
+        margin-top: 0.5rem;
+    }
+
+    /* Success message styling */
+    .stSuccess {
+        background: linear-gradient(145deg, #333333, #262626) !important;
+        color: #ffffff !important;
+        border: 1px solid #404040 !important;
     }
     </style>
 """, unsafe_allow_html=True)
 
 # Main title
-st.markdown('<p class="main-title">The Gathering</p>', unsafe_allow_html=True)
+st.markdown('<div class="main-title">The Gathering</div>', unsafe_allow_html=True)
 
-# Event section
-st.markdown('<p class="event-title">Example Event</p>', unsafe_allow_html=True)
+# Event card with title
+st.markdown("""
+    <div class="event-card">
+        <div class="event-title">Sunset session Marina</div>
+    </div>
+""", unsafe_allow_html=True)
 
-# Create columns for better layout
-col1, col2 = st.columns([1, 1])
+# Event image
+# st.image("https://via.placeholder.com/800x400", caption="Event Preview", use_column_width=True)
 
-with col1:
-    # Placeholder for event image
-    st.image("https://via.placeholder.com/400x300", caption="Event Image")
+# Event details card
+st.markdown("""
+    <div class="event-card">
+        <div class="event-details">Time: Saturday, 2 PM EST</div>
+        <div class="event-details">Place: Main Hall</div>
+        <div class="event-details">Entry Fee: $25</div>
+    </div>
+""", unsafe_allow_html=True)
 
-with col2:
-    # Event details
-    st.markdown('<p class="event-details">Time: [Event Time]</p>', unsafe_allow_html=True)
-    st.markdown('<p class="event-details">Place: [Event Location]</p>', unsafe_allow_html=True)
-    st.markdown('<p class="event-details">Entry Fee: [Fee Amount]</p>', unsafe_allow_html=True)
+# Description section
+st.markdown("""
+    <div class="event-card">
+        <div class="event-title">Event Details</div>
+        <p>Join us for an extraordinary gathering where creativity meets community. 
+        This exclusive event brings together artists, thinkers, and innovators for 
+        an unforgettable experience. Perfect for both newcomers and regular attendees.</p>
+    </div>
+""", unsafe_allow_html=True)
 
-# Additional details section
-st.markdown("---")
-st.markdown("### Event Description")
-st.write("Add your event description here. This can include multiple paragraphs and details about the event.")
-
-# Optional: Add a registration button
-if st.button("Register for Event"):
-    st.success("Registration button clicked! Add your registration logic here.")
+# Styled registration button
+if st.button("Register Now"):
+    st.success("Thank you for your interest! Registration details will be sent to your email.")
