@@ -308,3 +308,30 @@ button.styles_button__CgUgp.button {
 .st-emotion-cache-eczf16 {
     display: none !important;
 }
+
+/* Hide all sidebar-related elements */
+.st-emotion-cache-1egq50r {
+    display: none !important;
+}
+
+section[data-testid="stSidebar"] {
+    display: none !important;
+}
+
+.st-emotion-cache-x78sv8 {
+    display: none !important;
+}
+
+/* Hide the hamburger menu button */
+button[data-testid="baseButton-headerNoPadding"] {
+    display: none !important;
+}
+
+/* Remove any margin/padding that might be reserved for the sidebar */
+.st-emotion-cache-18ni7ap {
+    left: 0 !important;
+}
+
+.st-emotion-cache-z5fcl4 {
+    padding-left: 0 !important;
+}
