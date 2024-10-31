@@ -294,3 +294,17 @@ button.styles_button__CgUgp.button {
 [data-testid="column"] {
     padding: 0 5px;    /* Adds padding to the columns */
 }
+
+/* Hide Streamlit's sidebar collapse arrow */
+[data-testid="collapsedControl"] {
+    display: none !important;
+}
+
+/* Remove sidebar animation classes */
+.st-emotion-cache-j7qwjs {
+    display: none !important;
+}
+
+.st-emotion-cache-eczf16 {
+    display: none !important;
+}
