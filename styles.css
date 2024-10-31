@@ -76,8 +76,8 @@ footer {
     display: flex !important;
     justify-content: flex-end !important;
     align-items: center !important;
-    gap: 0 !important;
-    padding: 0 0 1rem 0 !important;
+    gap: 1rem !important;
+    padding: 0 !important;
     margin-top: 5px;
 }
 
@@ -272,14 +272,17 @@ button.styles_button__CgUgp.button {
 }
 
 [data-testid="stHorizontalBlock"] {
-    gap: 0 !important;
+    gap: 1rem !important;        /* Add gap between columns */
+    width: auto !important;
+    padding: 0 10px !important;
 }
 
 .stButton button {
     background-color: #a59f95;  /* Change to your desired color */
     color: white;
     border: none;
-    margin: 0 10px;    /* This adds horizontal spacing */
+    margin: 0 5px !important;     /* This adds horizontal spacing */
+    border-radius: 20px !important;
 }
 
 .stButton button:hover {
@@ -292,7 +295,7 @@ button.styles_button__CgUgp.button {
 }
 
 [data-testid="column"] {
-    padding: 0 5px;    /* Adds padding to the columns */
+    padding: 10 10px !important;    /* Increase horizontal padding between buttons */
 }
 
 /* Hide Streamlit's sidebar collapse arrow */
@@ -334,4 +337,47 @@ button[data-testid="baseButton-headerNoPadding"] {
 
 .st-emotion-cache-z5fcl4 {
     padding-left: 0 !important;
+}
+
+/* Hide the white corner arrow/hamburger menu */
+.st-emotion-cache-1q1n0ol {
+    display: none !important;
+}
+
+.st-emotion-cache-79elbk {
+    display: none !important;
+}
+
+/* Remove any additional sidebar elements */
+.st-emotion-cache-r421ms {
+    display: none !important;
+}
+
+[data-testid="stSidebarNav"] {
+    display: none !important;
+}
+
+/* Ensure main content takes full width */
+.main .block-container {
+    max-width: 100%;
+    padding-left: 0rem;
+    padding-right: 0rem;
+}
+
+.st-emotion-cache-1544g2x {
+    display: none !important;
+}
+
+.st-emotion-cache-1n76uvr {
+    display: none !important;
+}
+
+/* Remove any space reserved for sidebar */
+.st-emotion-cache-1wrcr25 {
+    margin-left: 0 !important;
+}
+
+/* Hide sidebar toggle */
+button[kind="header"] {
+    display: none !important;
 }

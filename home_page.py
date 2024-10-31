@@ -8,7 +8,8 @@ from pages.gatherings import show_gatherings_page
 st.set_page_config(
     page_title="The Gathering",
     layout="wide",
-    initial_sidebar_state="collapsed"
+    initial_sidebar_state="collapsed",
+    menu_items={} 
 )
 
 # Load external CSS

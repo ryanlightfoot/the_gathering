@@ -9,8 +9,7 @@ def show_gatherings_page():
     st.markdown("""
         <div class="section">
             <div class="event-title">Past Gatherings</div>
-            <p>Explore our community's past gatherings and the memories we've created together. 
-            Each gathering is a unique blend of creativity, connection, and celebration.</p>
+            <p>Explore our community's gatherings and see what experiences we have on offer
         </div>
     """, unsafe_allow_html=True)
 
